@@ -1,0 +1,73 @@
+1. kotlin 类型
+
+kotlin 中变量修饰分为
+
+val: 不可变 只能被赋值一次 类似于 Java 中的 final kotlin 官方推荐
+
+var： 可变变量 可以被赋值多次
+
+lateinit var 延迟初始化
+
+
+val > var > lateinit
+
+变量分为可空和不可空
+
+为了彻底消除空指针，建议尽量少用 lateinit 多用 val
+
+如果可以 用 var a : String?  代替 lateinit var a:String 尽管每次使用都必须判断空值，但是程序是绝对安全的
+
+可能会遇到的坑 ：
+kotlin 中调用 Java，从 Java 中来的参数，这个时候 用可空和非空类型都可以，--> 不确定用可空类型，“绝对” 确定 用不可空类型
+
+
+2. let apply with run
+
+
+看实现
+@kotlin.internal.InlineOnly
+public inline fun <T, R> T.let(block: (T) -> R): R {
+    contract {
+        callsInPlace(block, InvocationKind.EXACTLY_ONCE)
+    }
+    return block(this)
+}
+
+Kotlin 技术分享
+1. 空安全
+2. 函数
+3. Anko Layout http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2016/1123/6795.html
+4. 携程
+5. let apply…
+
+1. Obsever   lazy MVVM
+2. 类区别
+https://zhuanlan.zhihu.com/p/27034675
+https://kotlintc.com/articles/1345
+回调->l
+
+扩展写在类里面 仅作为类里面使用 外界用不了
+写在类外面 整个 project 全部都能用到
+
+函数：
+Kotlin 中 函数是一等公民
+1.函数可以作为一个参数任意传递
+2.函数可以作为另外一个函数的参数和返回值
+3.具备对象的所有功能,函数也是一个对象
+
+fun sum(a：Int,b:Int){
+	return a+b
+}
+
+val sum= fun(a:Int,b:Int){
+	return a+b
+}
+val sum = fun(a: Int, b: Int) = a + b
+val sum = { a: Int, b: Int -> a + b }
+
+
+函数作为参数时 书写格式
+
+函数名：（参数类型列表）-> 返回值
+
+
