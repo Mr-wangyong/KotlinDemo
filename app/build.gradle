@@ -33,6 +33,6 @@ repositories {
 }
 kotlin {
     experimental {
-        coroutines "error"
+        coroutines "enable"
     }
 }
