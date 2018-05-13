@@ -36,7 +36,7 @@ public inline fun <T, R> T.let(block: (T) -> R): R {
 Kotlin 技术分享
 1. 空安全
 2. 函数
-3. Anko Layout http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2016/1123/6795.html
+3. Anko Layout   http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2016/1123/6795.html
 4. 携程
 5. let apply…
 
