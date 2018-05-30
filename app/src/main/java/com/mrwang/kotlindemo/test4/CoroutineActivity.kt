@@ -3,6 +3,7 @@ package com.mrwang.kotlindemo.test4
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import org.jetbrains.anko.button
+import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.verticalLayout
 import org.jetbrains.anko.wrapContent
 
@@ -20,11 +21,15 @@ class CoroutineActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         verticalLayout {
             button("启动线程") {
-                coroutine.javaThread()
+                onClick {
+                    coroutine.javaThread()
+                }
             }.lparams(wrapContent, wrapContent)
 
             button("启动协程") {
-                coroutine.coroutineThread()
+                onClick {
+                    coroutine.coroutineThread()
+                }
             }.lparams(wrapContent, wrapContent)
         }
     }

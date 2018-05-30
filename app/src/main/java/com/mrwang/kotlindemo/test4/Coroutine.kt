@@ -10,6 +10,9 @@ import kotlinx.coroutines.experimental.launch
  */
 class Coroutine {
 
+    // 最大
+    // 协程 index=1183544 thread=ForkJoinPool.commonPool-worker-6
+    // I/art: Clamp target GC heap from 393MB to 384MB
     fun coroutineThread() {
         var index = 0
         while (true) {
@@ -21,6 +24,7 @@ class Coroutine {
         }
     }
 
+    // 最大 I/System.out: 线程 index=13088 thread=Thread-23315
     fun javaThread() {
         var index = 0
         while (true) {

@@ -2,6 +2,7 @@ package com.mrwang.kotlindemo.test2
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import org.jetbrains.anko.setContentView
 
 /**
  * AnkoLayout 的使用
@@ -16,6 +17,6 @@ class AnkoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        uiHolder.createUI()
+        uiHolder.setContentView(this)
     }
 }
