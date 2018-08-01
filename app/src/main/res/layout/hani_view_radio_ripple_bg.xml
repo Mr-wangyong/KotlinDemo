@@ -4,21 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.mrwang.kotlindemo.test5.RadioRippleLayerView
+    <com.mrwang.kotlindemo.release.test5.RadioRippleLayerView
         android:id="@+id/radio_ciclr1"
         android:layout_gravity="center"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <com.mrwang.kotlindemo.test5.RadioRippleLayerView
+    <com.mrwang.kotlindemo.release.test5.RadioRippleLayerView
         android:id="@+id/radio_ciclr2"
         android:layout_gravity="center"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <com.mrwang.kotlindemo.test5.RadioRippleLayerView
+    <com.mrwang.kotlindemo.release.test5.RadioRippleLayerView
         android:id="@+id/radio_ciclr3"
         android:layout_gravity="center"
         android:visibility="gone"

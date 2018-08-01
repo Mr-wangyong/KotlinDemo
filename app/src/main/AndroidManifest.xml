@@ -9,24 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".test1.MainActivity">
+        <activity android:name=".release.test1.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name="com.mrwang.kotlindemo.test2.AnkoActivity">
+        <activity android:name="com.mrwang.kotlindemo.release.test2.AnkoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="com.mrwang.kotlindemo.test4.CoroutineActivity">
+        <activity android:name="com.mrwang.kotlindemo.release.test4.CoroutineActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="com.mrwang.kotlindemo.test5.RippleActivity">
+        <activity android:name="com.mrwang.kotlindemo.release.test5.RippleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

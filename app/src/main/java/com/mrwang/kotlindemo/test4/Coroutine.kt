@@ -1,8 +1,6 @@
-package com.mrwang.kotlindemo.test4
+package com.mrwang.kotlindemo.release.test4
 
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.experimental.*
 
 /**
  * @date 2018/5/11
@@ -14,6 +12,13 @@ class Coroutine {
     // 协程 index=1183544 thread=ForkJoinPool.commonPool-worker-6
     // I/art: Clamp target GC heap from 393MB to 384MB
     fun coroutineThread() {
+        val job = Job()
+        val demo = job + CommonPool
+        async(demo) {
+            println("xxxxx")
+        }
+        job.cancel()
+
         var index = 0
         while (true) {
             launch(CommonPool) {
@@ -22,6 +27,8 @@ class Coroutine {
                 delay(Int.MAX_VALUE.toLong())
             }
         }
+
+
     }
 
     // 最大 I/System.out: 线程 index=13088 thread=Thread-23315

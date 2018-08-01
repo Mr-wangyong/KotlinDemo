@@ -1,10 +1,11 @@
+REPL 命令行工具
 1. kotlin 类型
 
 kotlin 中变量修饰分为
 
 val: 不可变 只能被赋值一次 类似于 Java 中的 final kotlin 官方推荐
 
-var： 可变变量 可以被赋值多次
+var：可变变量 可以被赋值多次
 
 lateinit var 延迟初始化
 
@@ -20,15 +21,54 @@ val > var > lateinit
 可能会遇到的坑 ：
 kotlin 中调用 Java，从 Java 中来的参数，这个时候 用可空和非空类型都可以，--> 不确定用可空类型，“绝对” 确定 用不可空类型
 
+可见性
+private, protected, internal
+public:默认的
+internal:只能在当前module中使用
+
+
+
+2.函数,闭包：
+
+扩展函数
+T.methodName(){
+
+}
+1.语法糖，生成静态方法等待调用，其实就是节省了一个参数，内部用该参数替换 this
+2.切换了上下文环境 内部可以直接用 T
+
+注意事项：
+1.为正确的类型做扩展
+
+
+
+Kotlin 中 函数是一等公民
+1.函数可以作为一个参数任意传递  类型为 functionXXX
+2.函数可以作为另外一个函数的参数和返回值
+3.具备对象的所有功能,函数也是一个对象
+
+函数作为参数时 书写格式
+函数名：（参数类型列表）-> 返回值
+
+
+形态1
+fun 函数名(参数列表):返回值{
+}
+
+
+
+
+
+
+
 
 2. let apply with run
-
 
 看实现
 @kotlin.internal.InlineOnly
 public inline fun <T, R> T.let(block: (T) -> R): R {
     contract {
-        callsInPlace(block, InvocationKind.EXACTLY_ONCE)
+        callsInPlace(block, InvocationKind.EXACTLY_ONCE) // 传入的 lambda 会立即在“原地”执行有且仅有一次 http://chuansong.me/n/2284837152020
     }
     return block(this)
 }
