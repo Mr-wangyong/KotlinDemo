@@ -13,7 +13,7 @@ import javax.microedition.khronos.opengles.GL10
  * @date 2018/11/5
  * @author chengwangyong
  */
-class Square : Shape {
+class Square : Shape() {
 
     private val VERTEX = floatArrayOf(// in counterclockwise order:
             1f, 1f, 0f, // top right

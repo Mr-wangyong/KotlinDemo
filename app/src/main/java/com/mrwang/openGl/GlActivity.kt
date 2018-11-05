@@ -29,7 +29,7 @@ class GlActivity : AppCompatActivity() {
     }
 
     private fun getRender(): GLSurfaceView.Renderer? {
-        return Square()
+        return Square2()
     }
 
     override fun onResume() {

@@ -12,7 +12,7 @@ import javax.microedition.khronos.opengles.GL10
  * @date 2018/11/5
  * @author chengwangyong
  */
-open class Triangle : Shape {
+open class Triangle : Shape() {
     private val VERTEX_SHADER =
             "attribute vec4 vPosition;\n" +
                     " void main() {\n" +
