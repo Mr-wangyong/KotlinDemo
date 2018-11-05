@@ -12,7 +12,6 @@ class OperatorDemo {
 
 
     fun main() {
-
         for (i in 1..100) {
 
         }
@@ -30,7 +29,6 @@ class OperatorDemo {
     fun main(args: Array<String>) {
         val 老王 = Person("老王")
         老王 说 "我终于会写 kotlin 了"
-
 
 
         300L timeOut {

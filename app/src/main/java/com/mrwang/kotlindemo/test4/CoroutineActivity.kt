@@ -4,6 +4,7 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.mrwang.kotlindemo.R
+import com.mrwang.kotlindemo.test4.ChannelDemo
 import kotlinx.coroutines.experimental.*
 import kotlinx.coroutines.experimental.android.UI
 import org.jetbrains.anko.button
@@ -77,8 +78,7 @@ class CoroutineActivity : AppCompatActivity() {
         verticalLayout {
             button("启动协程") {
                 onClick {
-                    val job = runCoroutine()
-                    job.start()
+                    ChannelDemo.channelTest2()
                 }
             }.lparams(wrapContent, wrapContent)
 
@@ -95,10 +95,20 @@ class CoroutineActivity : AppCompatActivity() {
     }
 
     private fun runCoroutine() = launch(UI + job, CoroutineStart.LAZY) {
-       while (isActive){
-           delay(1000L)
-           println("coroutine is running")
-       }
+        withTimeoutOrNull(1000L){
+            println("Start withTimeoutOrNull")
+            delay(500L)
+            println("end withTimeoutOrNull")
+        }
+//       while (isActive){
+//           delay(1000L)
+//           println("coroutine is running")
+//       }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        job.cancel()
     }
 
 }

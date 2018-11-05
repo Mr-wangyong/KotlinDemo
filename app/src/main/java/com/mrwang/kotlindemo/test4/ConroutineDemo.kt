@@ -30,7 +30,6 @@ class CoroutineDemo {
             println("HelloWorld")
         }
 
-
         launch(UI) {
             val img1 = async(CommonPool) { loadImage() }
             val img2 = async(CommonPool) { loadImage() }
@@ -54,4 +53,6 @@ class CoroutineDemo {
         delay(1000L)
         return BitmapFactory.decodeFile("")
     }
+
+
 }

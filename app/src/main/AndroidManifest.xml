@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mrwang.kotlindemo">
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,7 +17,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.mrwang.kotlindemo.release.test2.AnkoActivity">
+        <activity android:name="com.mrwang.kotlindemo.release.test2.AnkoTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -26,7 +27,7 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="com.mrwang.kotlindemo.release.test5.RippleActivity">
+        <activity android:name="com.mrwang.openGl.GlActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

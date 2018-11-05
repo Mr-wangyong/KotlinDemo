@@ -17,6 +17,7 @@ import org.jetbrains.anko.custom.ankoView
 class AnkoActivity : AppCompatActivity(), AnkoLogger {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         verticalLayout {
             button("Hello") {
 

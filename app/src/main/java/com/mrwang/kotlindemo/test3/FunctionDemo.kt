@@ -11,20 +11,21 @@ package com.mrwang.kotlindemo.release.test3
  * @author chengwangyong
  */
 class FunctionDemo {
+    var name:String?="XXX"
 
+    fun method2(){
 
-    fun findMaxThumb(person: List<Person>) {
-        val boxList = person.filter {
-            it.sex == "M"
-        }.maxBy {
-            it.thumb
+        name.apply2{
+            println("apply")
         }
 
-        val List = person.filter {
-            it.sex == "L"
-        }.maxBy {
-            it.thumb
-        }
+
     }
+
+    fun<T> T.apply2(block: T.() -> Unit): T { block(); return this }
+
 }
+
+
+
 
