@@ -21,7 +21,6 @@ class Triangle2 : Shape() {
     private var vertexBuffer: FloatBuffer
 
     // 设置每个顶点的坐标数
-    private val COORDS_PER_VERTEX = 3
 
     // 设置三角形顶点数组
     private val triangleCoords = floatArrayOf( // 默认按逆时针方向顺序绘制

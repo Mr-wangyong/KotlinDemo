@@ -24,7 +24,7 @@ object PointsRender : GLSurfaceView.Renderer {
     //这个shader就是想在原点画一个尺寸为20的点。
     private const val VERTEX_SHADER =
             "void main() {\n" +
-                    "gl_Position = vec4(0.0, 0.0, 0.0, 1.0);\n" +
+                    "gl_Position = vec4(-0.5, 0.5, 0.0, 1.0);\n" +
                     "gl_PointSize = 20.0;\n" +
                     "}\n"
 
@@ -49,9 +49,11 @@ object PointsRender : GLSurfaceView.Renderer {
         // 目前就理解成为画面背景色就可以了。
         GLES20.glClearColor(0f, 0f, 0f, 0f)
 
+
         // 创建一个vertex shader程序 返回值是一个句柄/程序指针 JNI 知识
         val vsh = GLES20.glCreateShader(GLES20.GL_VERTEX_SHADER)
         // 设置 vertex shader 源码
+
         GLES20.glShaderSource(vsh, VERTEX_SHADER)
         // 编译 vertex shader
         GLES20.glCompileShader(vsh)

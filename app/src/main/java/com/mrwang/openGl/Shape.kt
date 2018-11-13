@@ -12,6 +12,8 @@ import javax.microedition.khronos.opengles.GL10
  * @author chengwangyong
  */
 abstract class Shape : GLSurfaceView.Renderer {
+    // 每个顶点的坐标数
+    protected val COORDS_PER_VERTEX = 3
     /**
      * float类型大小为4个字节
      */
@@ -70,7 +72,7 @@ abstract class Shape : GLSurfaceView.Renderer {
      *
      * @return 程式
      */
-    private fun getProgram(): Int {
+    protected fun getProgram(): Int {
         //获取顶点着色器
         val vertexShader = getVertexShader()
         //获取片段着色器
@@ -149,7 +151,6 @@ abstract class Shape : GLSurfaceView.Renderer {
 
         // 设置颜色
         GLES20.glUniform4fv(mColorHandle, 1, color, 0)
-
         // 绘制图形
         GLES20.glDrawElements(GLES20.GL_TRIANGLES, drawOrder.size, GLES20.GL_UNSIGNED_SHORT, drawListBuffer)
 

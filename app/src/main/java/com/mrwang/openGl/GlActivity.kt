@@ -25,11 +25,10 @@ class GlActivity : AppCompatActivity() {
         glSurfaceView.setRenderer(getRender())
         // 设置渲染模式 一直渲染
         glSurfaceView.renderMode = GLSurfaceView.RENDERMODE_CONTINUOUSLY
-
     }
 
-    private fun getRender(): GLSurfaceView.Renderer? {
-        return Square2()
+    private fun getRender(): GLSurfaceView.Renderer {
+        return Oval()
     }
 
     override fun onResume() {
@@ -41,7 +40,4 @@ class GlActivity : AppCompatActivity() {
         super.onPause()
         glSurfaceView.onPause()
     }
-
-
-
 }

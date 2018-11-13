@@ -17,8 +17,7 @@ class Square2 : Shape() {
     //绘图顺序顶点缓冲区
     private val drawListBuffer: ShortBuffer
 
-    // 每个顶点的坐标数
-    private val COORDS_PER_VERTEX = 3
+
     //正方形四个顶点的坐标
     private val squareCoords = floatArrayOf(
             -0.5f, 0.5f, 0.0f,   // top left

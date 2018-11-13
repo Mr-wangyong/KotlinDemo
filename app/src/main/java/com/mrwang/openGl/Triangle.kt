@@ -35,7 +35,6 @@ open class Triangle : Shape() {
 
     private var color = floatArrayOf(1.0f, 1.0f, 1.0f, 1.0f) //白色
 
-    val COORDS_PER_VERTEX = 3
     //顶点之间的偏移量
     private val vertexStride = COORDS_PER_VERTEX * 4 // 每个顶点四个字节
     //顶点个数
@@ -50,6 +49,7 @@ open class Triangle : Shape() {
         //申请底层空间
         val bb = ByteBuffer.allocateDirect(
                 triangleCoords.size * 4)
+        //数据硬件对齐
         bb.order(ByteOrder.nativeOrder())
         //将坐标数据转换为FloatBuffer，用以传入给OpenGL ES程序
         vertexBuffer = bb.asFloatBuffer()
@@ -88,14 +88,18 @@ open class Triangle : Shape() {
         GLES20.glVertexAttribPointer(mPositionHandle, COORDS_PER_VERTEX,
                 GLES20.GL_FLOAT, false,
                 vertexStride, vertexBuffer)
+
+
+        // 这里其实就是取出源码里面的 变量 进行赋值
+
         //获取片元着色器的vColor成员的句柄
-        val mColorHandle = GLES20.glGetUniformLocation(mProgram, "vColor");
+        val mColorHandle = GLES20.glGetUniformLocation(mProgram, "vColor")
         //设置绘制三角形的颜色
         GLES20.glUniform4fv(mColorHandle, 1, color, 0)
         //绘制三角形
         GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vertexCount)
         //禁止顶点数组的句柄
-        GLES20.glDisableVertexAttribArray(mPositionHandle);
+        GLES20.glDisableVertexAttribArray(mPositionHandle)
     }
 
 }
